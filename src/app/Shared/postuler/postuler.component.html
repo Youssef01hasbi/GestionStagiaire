@@ -1,0 +1,38 @@
+<app-header></app-header>
+<section class="about_section layout_padding long_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <!-- Remplacez le src par l'image du stage si disponible -->
+          <img src="{{stage.photo}}" alt="Photo">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              Postuler pour ce stage
+            </h2>
+          </div>
+          <p>
+            Nous nous engageons à fournir une plateforme intuitive et fiable pour simplifier la gestion de vos stagiaires,
+            vous permettant de vous concentrer sur ce qui compte vraiment : développer les talents de demain.
+            <span style="color: red;font-weight: bold">Pour postuler envoyer votre cv a recrutement@ChallengerCode.com</span>
+          </p>
+          <!-- Information sur le stage -->
+          <div class="stage-info mt-4">
+            <h4>Informations sur le Stage :</h4>
+            <p><strong>Sujet :</strong> {{ stage.sujet }}</p>
+            <p><strong>Date de début :</strong> {{ stage.dateDebut | date }}</p>
+            <p><strong>Date de fin :</strong> {{ stage.dateFin | date }}</p>
+            <p><strong>Description :</strong> {{ stage.description }}</p>
+          </div>
+          <!-- /Information sur le stage -->
+          <button class="btn btn-primary" [routerLink]="['/mesDemandes']" (click)="postulerNow()">Postuler Now</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

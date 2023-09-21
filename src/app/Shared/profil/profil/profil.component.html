@@ -1,0 +1,71 @@
+<!--<div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3>
+      <strong>{{ currentUser.username }}</strong> Profile
+    </h3>
+  </header>
+  <p>
+    <strong>Token:</strong>
+    {{ currentUser.accessToken.substring(0, 20) }} ...
+    {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
+  </p>
+  <p>
+    <strong>Email:</strong>
+    {{ currentUser.email }}
+  </p>
+  <strong>Roles:</strong>
+  <ul>
+    <li *ngFor="let role of currentUser.roles">
+      {{ role }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>-->
+
+<div class="center-block">
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-3 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ currentUser.username }}</span><span class="text-black-50">{{ currentUser.email }}</span><span> </span></div>
+    </div>
+    <div class="col-md-5 border-right">
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="text-right">Profile Settings</h4>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="{{stagiaire.nom}}" value=""></div>
+          <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="{{stagiaire.prenom}}"></div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="{{stagiaire.telephone}}" value=""></div>
+          <div class="col-md-12"><label class="labels">CIN</label><input type="text" class="form-control" placeholder="{{stagiaire.cin}}" value=""></div>
+          <div class="col-md-12"><label class="labels">Email </label><input type="text" class="form-control" placeholder="{{stagiaire.email}}" value=""></div>
+          <div class="col-md-12"><label class="labels">Date Naissance</label><input type="text" class="form-control" placeholder="{{stagiaire.dateNaissance}}" value=""></div>
+          <div class="col-md-12"><label class="labels">Level Education</label><input type="text" class="form-control" placeholder="{{stagiaire.niveauEtude}}" value=""></div>
+        </div>
+        <!--<div class="row mt-3">
+          <div class="col-md-6"><label class="labels">Formation Specialite</label><input type="text" class="form-control" placeholder="Specialite" value=""></div>
+          <div class="col-md-6"><label class="labels">Diplome</label><input type="text" class="form-control" value="" placeholder="Diplome"></div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6"><label class="labels">Name School</label><input type="text" class="form-control" placeholder="Name School" value=""></div>
+        </div>-->
+        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center experience"><span>Upload Resume</span>
+          <span class="border px-3 p-1 add-experience">
+            <i class="fa fa-plus">
+            </i><input type="file" id="resume" class="sr-only" aria-label="Resume">
+                <label for="resume" class="btn" aria-hidden="true">Upload Resume</label></span></div><br>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

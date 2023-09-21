@@ -1,0 +1,10 @@
+#monImage {
+  width: 250px; /* Largeur initiale de l'image */
+  height: 150px; /* Hauteur initiale de l'image */
+  transition: transform 0.3s ease-in-out; /* Ajoute une transition fluide lors du redimensionnement */
+}
+
+#monImage:hover {
+  transform: scale(1.2); /* Agrandit l'image à 120% de sa taille initiale au survol */
+  cursor: pointer; /* Change le curseur en une main pointer au survol */
+}

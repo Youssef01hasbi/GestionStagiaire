@@ -1,0 +1,77 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.col-md-4 {
+  padding: 0;
+  margin: 0;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.logo {
+  position: absolute; /* Position absolue */
+  top: 0; /* En haut de la page */
+  left: 0; /* À gauche de la page */
+  right: 0; /* À droite de la page */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px; /* Hauteur du logo */
+  color: #1d1b31; /* Couleur du texte */
+  font-size: 24px; /* Taille de la police du texte */
+  font-weight: bold; /* Poids de la police du texte */
+  z-index: 999; /* Mettez le logo au-dessus du contenu */
+}
+
+.logo img {
+  max-height: 60px; /* Hauteur maximale de l'image du logo */
+  margin-right: 10px; /* Marge à droite de l'image du logo (pour l'espacement) */
+}
+
+/* Reste de votre style CSS ici */
+
+/* Réinitialisez les styles de la page (optionnel) */
+body, html {
+  margin: 0;
+  padding: 0;
+}

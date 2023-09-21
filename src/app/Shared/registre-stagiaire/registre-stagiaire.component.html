@@ -1,0 +1,197 @@
+
+<form
+  *ngIf="!isSuccessful"
+  name="form"
+  (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm"
+  novalidate
+  style="margin: 15px"
+>
+  <div class="center-block" >
+    <div class="container rounded bg-white mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-3 border-right">
+          <div class="logo" xmlns="http://www.w3.org/1999/html">
+            <img id="monImage" src="../../../assets/images/Ministére.png" alt="Description de l'image">
+          </div>
+        </div>
+        <div class="col-md-5 border-right">
+          <div class="p-3 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="text-right">Registre NOW</h4>
+            </div>
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <label class="labels">NOM</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="first name"
+                  name="nom"
+                  [(ngModel)]="form.nom"
+                  ngModel
+                  #nom="ngModel"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="labels">Prenom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="surname"
+                  name="prenom"
+                  [(ngModel)]="form.prenom"
+                  ngModel
+                  #prenom="ngModel"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <label class="labels">Mobile Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="enter phone number"
+                  name="telephone"
+                  [(ngModel)]="form.telephone"
+                  ngModel
+                  #telephone="ngModel"
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">CIN</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="CIN national"
+                  name="cin"
+                  [(ngModel)]="form.cin"
+                  ngModel
+                  #cin="ngModel"
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Date Naissance</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="dateNaissance"
+                  [(ngModel)]="form.dateNaissance"
+                  ngModel
+                  #dateNaissance="ngModel"
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="labels">Level Education</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Level Education"
+                  name="niveauEtude"
+                  [(ngModel)]="form.niveauEtude"
+                  ngModel
+                  #niveauEtude="ngModel"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label class="labels">Formation Specialite</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Specialite"
+                  name="formation.specialite"
+                  [(ngModel)]="form.formation.specialite"
+                  ngModel
+                  #specialite="ngModel"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="labels">Diplome</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Diplome"
+                  name="formation.diplome"
+                  [(ngModel)]="form.formation.diplome"
+                  ngModel
+                  #diplome="ngModel"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label class="labels">Name School</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name School"
+                  name="formation.etablissment.nom"
+                  [(ngModel)]="form.formation.etablissment.nom"
+                  ngModel
+                  #nom="ngModel"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 py-5">
+
+            <br />
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <label class="labels">username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="username"
+                  name="username"
+                  [(ngModel)]="form.username"
+                  #username="ngModel"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="labels">password</label>
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  [(ngModel)]="form.password"
+                  #password="ngModel"
+                  placeholder="password"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <label class="labels">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  name="email"
+                  [(ngModel)]="form.email"
+                  #email="ngModel"
+                />
+              </div>
+            </div>
+          </div>
+          <div style="padding-top: 350px;padding-left: 120px">
+          <button class="btn btn-primary profile-button" type="submit">
+            Save Profile
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title> Drop Down Sidebar Menu | CodingLab </title>
+  <!-- Boxiocns CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="sidebar" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  background: #11101d;
+  z-index: 100;
+  transition: all 0.5s ease;
+">
+  <div class="logo-details" style="
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  ">
+    <i class='bx bxl-c-plus-plus' style="
+      font-size: 30px;
+      color: #fff;
+      height: 50px;
+      min-width: 78px;
+      text-align: center;
+      line-height: 50px;
+    "></i>
+    <span class="logo_name" style="
+      font-size: 22px;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s ease;
+      transition-delay: 0.1s;
+    ">ChallengerCode</span>
+  </div>
+  <ul class="nav-links" style="
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+  ">
+    <li>
+      <a routerLink="/home">
+        <i class='bx bx-grid-alt' ></i>
+        <span class="link_name">Accueil</span>
+      </a>
+    </li>
+    <li class="has-submenu">
+      <div class="iocn-link">
+        <a routerLink="/tuteur" *ngIf="hasRole('Role_Admin')">
+          <i class='bx bx-collection' ></i>
+          <span class="link_name" > Encadrants </span>
+        </a>
+      </div>
+    </li>
+    <li class="has-submenu" (click)="toggleSubMenu($event)" >
+      <div class="iocn-link">
+        <a *ngIf="hasRole('Role_Admin')">
+          <i class='bx bx-book-alt' ></i>
+          <span class="link_name">Offre Stage</span>
+        </a>
+        <i *ngIf="hasRole('Role_Admin')" class='bx bxs-chevron-down arrow' ></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a routerLink="/addOffre"  >Tout les offres</a></li>
+        <li><a *ngIf="hasRole('Role_Admin')" routerLink="allPostuler" >Demande de stage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/stagiaire" *ngIf="hasRole('Role_Admin')">
+        <i class='bx bx-pie-chart-alt-2' ></i>
+        <span class="link_name">Stagiaires</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" >Analytics</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu" (click)="toggleSubMenu($event)">
+      <div class="iocn-link">
+        <a [routerLink]="['/mesDemandes']" *ngIf="hasRole('Role_Stagiaire')">
+          <i class='bx bx-plug' ></i>
+          <span class="link_name">Mes Demandes </span>
+        </a>
+        <!--<i class='bx bxs-chevron-down arrow' ></i>-->
+      </div>
+     <!-- <ul class="sub-menu">
+        <li><a class="link_name" href="#">Mes Demandes</a></li>
+        <li><a href="#">UI Face</a></li>
+        <li><a href="#">Pigments</a></li>
+        <li><a href="#">Box Icons</a></li>
+      </ul>-->
+    </li>
+    <li class="has-submenu" >
+      <div class="iocn-link">
+        <a routerLink="listStage" *ngIf="hasRole('Role_Encadrant')">
+          <i class='bx bx-plug' ></i>
+          <span class="link_name">Stage</span>
+        </a>
+      </div>
+    </li>
+    <li>
+      <a *ngIf="hasRole('Role_Admin')">
+        <i class='bx bx-cog' ></i>
+        <span class="link_name">Setting</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="#">Setting</a></li>
+      </ul>
+
+    <li *ngIf="!isLoggedIn">
+      <div class="profile-details" style="">
+        <div class="link_name" style="padding-left: 100px;padding-bottom: 50%">
+          <a class="profile_name" routerLink="/login">login</a>
+        </div>
+       <!-- <div class="link_name" style="padding-right: 100px;padding-bottom: 60px">
+          <a class="profile_name" routerLink="/registre">Sign up</a>
+        </div>-->
+      </div>
+    </li>
+    <li *ngIf="isLoggedIn">
+      <div class="profile-details">
+        <div class="profile-content" style="cursor: pointer">
+          <img src="../../../assets/img/profile.jpg" routerLink="profile" alt="profileImg">
+        </div>
+        <div class="name-job">
+          <div class="profile_name">{{username}}</div>
+
+        </div>
+        <i class='bx bx-log-out' (click)="logout()" ></i>
+      </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
